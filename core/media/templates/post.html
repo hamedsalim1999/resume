@@ -1,0 +1,94 @@
+{% extends 'shared/_nav.html' %}
+{% block body %}
+{% load static %}
+
+<main>
+    {% if post_show  %}
+
+    <div id="blog" class="blog-section section-padding">
+
+
+        <div class="row">
+            <div class="col-md-12 nopadding">
+                <div class="container">
+                    <div class="row">
+                    {% for publisher in post_show %}
+                    <a href="/{{publisher.uid}}" >
+                    <div class="col-sm-6">
+                        <div class="entry-post">
+                            <div class="entry-thumbnail">
+                                    <div class="thumbnail-oberlay"></div>
+                                    {% if publisher.image %}
+                                    <img class="img-responsive" src="{{ publisher.image.url }}" alt="Image">
+                                    {% else %}
+                                        <img src="{% static 'resume/images/banner-img.jpg' %}">   
+                                    {% endif %}
+                                </div>
+                                <div class="post-content">
+                                    <div class="time">
+                                        <a class="link" href="/{{publisher.uid}}">{{ publisher.published_at.month }}
+                                            <span>{{ publisher.published_at.year }}</span></a>
+                                    </div>
+                                    <div class="entry-title">
+                                        <h2><a href="/{{publisher.uid}}">{{ publisher.tittle }}</a></h2>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                </div>
+            </div><!-- container -->
+        </div><!-- blog section -->
+        {% elif article_detail %}
+
+        <div id="blog-details" class="section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-8 col-sm-7">
+                        <div class="blog-content blog-single-content">
+                            {% if article_detail.image %}
+                            <img src="{{ article_detail.image.url }}" alt="Image">
+                            {% else %}
+                                <img src="{% static 'resume/images/banner-img.jpg' %}">   
+                            {% endif %}
+                            <div class="blog-text">
+                                <h5>{{ article_detail.published_at.date }}</h5>
+                                <h3>{{article_detail.tittle}}</h3>
+                                <p>{{article_detail.main_text}}</p>
+                            </div><!-- /.end of blog-text -->
+                            {% if article_detail.main_file %}
+                         <a  href="{{article_detail.main_file.url}}">download </a>
+                         {% endif %}
+                         <br>
+                         
+                         <span class="badge badge-primary">{{ article_detail.category_list }}</span>
+                         <br>
+                            <span class="badge badge-primary">{{ article_detail.auther }}</span>
+                        </div><!-- /.end of blog-content -->
+                       
+                </div><!-- row -->
+            </div><!-- container -->
+        </div><!-- blog section -->
+
+
+
+
+
+
+
+        {% else %}
+        <h1>no post_show</h1>
+        {% endif %}
+
+    </div>
+
+    </div>
+    </div><!-- container -->
+    </div><!-- blog section -->
+</main>
+{% endblock %}

@@ -1,0 +1,6 @@
+venv
+core/media/upload
+core/settings.ini
+.vscode
+__pycache__
+

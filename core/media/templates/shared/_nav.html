@@ -1,0 +1,144 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Blog | Resume</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'resume/images/favicon.ico'%}">
+	<!-- ========== css for model-effect ========== -->
+	<!-- ========== css for animate ========== -->
+	<link href="{% static 'resume/css/animate.min.css' %}" rel="stylesheet" />
+	<!-- ========== css for icon ========== -->
+	<link rel="stylesheet" href="{% static 'resume/css/main.css'%}">
+	<link rel="stylesheet" href="{% static 'resume/css/font-awesome.min.css'%}">
+	<link rel="stylesheet" href="{% static 'resume/css/pe-icon-7-stroke.css'%}">
+	<!-- ========== css for smartmenus ========== -->
+	<link rel="stylesheet" href="{% static 'resume/css/bootstrap-dropdownhover.css'%}">
+	<!-- ========== css for bootstrap ========== -->
+	<link rel="stylesheet" href="{% static 'resume/css/bootstrap.min.css'%}">
+	<!-- ========== css fo===== -->
+	<link rel="stylesheet" href="{% static 'resume/css/style.css'%}">
+	<!-- ========== css fo======= -->
+	<link rel="stylesheet" href="{% static 'resume/css/magnific-popup.css'%}">
+	<link rel="stylesheet" href="{% static 'resume/css/responsive.css'%}">
+</head>
+
+<body>
+	<!-- ========== start of menu section ========== -->
+	<section id="menu">
+		<nav class="navbar navbar-default">
+			<div class="container">
+			    <div class="navbar-header">
+			      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#resume-navbar-collapse" aria-expanded="false">
+			        <span class="sr-only">Toggle navigation</span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			      </button>
+			    </div><!-- /.end of navbar-header -->
+
+			    <div class="collapse navbar-collapse" id="resume-navbar-collapse">
+			      	<ul class="nav navbar-nav ">
+				        <li><a href="./">Home</a></li>
+				        <li><a href="./hamed">Hamed</a></li>
+				        <li><a href="./sahand">Sahand</a></li>
+				    
+				        <li class="active"><a href="#blog">Blog</a></li>
+				        <li><a href="./#contact">Contact</a></li>
+			      	</ul><!-- /.end of nav navbar-nav -->
+			    </div><!-- /.navbar-collapse -->
+			</div><!-- /.container -->
+		</nav><!-- /.end of navbar navbar-default -->
+	</section><!-- /#end of menu section -->
+
+    {% block body %}
+
+
+
+    {% endblock %}
+
+	<!-- ========== start footer section ========== -->
+	<section id="footer"  >
+		<div class="container ">
+			<div class="row">
+				<div class="col-lg-6 col-md-6 col-sm-6">
+					<div class="footer-content">
+						<p><i class="fa fa-copyright" aria-hidden="true"></i> Copyright 2016  All Rights Reserved by Baron Adler</p>
+					</div><!-- /.end of footer-content -->
+				</div><!-- /.end of col-md-6 -->
+
+				<div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 col-sm-6">
+					<div class="social-content">
+						<ul class="list-inline">
+						  <li><p>Follow Me : </p></li>
+						  <li><a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+						  <li><a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+						  <li><a href=""><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+						  <li><a href=""><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
+						  <li><a href=""><i class="fa fa-behance" aria-hidden="true"></i></a></li>
+						  <li><a href=""><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+						</ul><!-- /.end of list-inline -->
+					</div><!-- /.end of social-content -->
+				</div><!-- /.end of col-md-4 -->
+			</div><!-- /.end of row -->
+		</div><!-- /.end of container -->
+	</section><!-- /#end of footer section -->
+
+
+	<!-- ========== start scroll-top section ========== -->
+	<section id="scroll-top">
+		<div class="scroll-top-wrapper ">
+			<span class="scroll-top-inner">
+				<i class="pe pe-7s-play"></i>
+			</span><!-- /.end of scroll-top-inner -->
+		</div><!-- /.end of scroll-top-wrapper -->
+	</section><!-- /#end of scroll-top section -->
+
+	<script type="text/javascript" src="{% static 'resume/js/inview.min.js'%}"></script>
+	<script type="text/javascript" src="{% static 'resume/js/counterup.min.js'%}"></script>
+	<script type="text/javascript" src="{% static 'resume/js/waypoints.min.js'%}"></script>
+	<!-- ========== main jQuery library ========== -->
+	<script type="text/javascript" src="{% static 'resume/js/jquery-1.12.3.min.js'%}"></script>
+	<!-- ========== bootstrap jQuery library ========== -->
+	<script type="text/javascript" src="{% static 'resume/js/bootstrap.min.js'%}"></script>
+	<!-- ========== smartmenus jQuery library ========== -->
+	<script src="{% static 'resume/js/bootstrap-dropdownhover.js'%}"></script>
+
+	<!-- ========== menu & sidebar scroll jQuery library ========== -->
+	<script type="text/javascript" src="{% static 'resume/js/jquery.hc-sticky.min.js'%}"></script>
+	<script type="text/javascript" src="{% static 'resume/js/easypiechart.js'%}"></script>
+	<script type="text/javascript" src="{% static 'resume/js/magnific-popup.min.js'%}"></script>
+	<script type="text/javascript" src="{% static 'resume/js/main.js'%}"></script>
+    <script type="text/javascript">
+		$('#menu, #sidebar').hcSticky();
+	</script>
+
+	<!-- ========== jQuery library for scroll-top ========== -->
+	<script>
+		$(function(){
+			$(document).on( 'scroll', function(){
+
+			if ($(window).scrollTop() > 100) {
+			$('.scroll-top-wrapper').addClass('show');
+			} else {
+			$('.scroll-top-wrapper').removeClass('show');
+			}
+			});
+			$('.scroll-top-wrapper').on('click', scrollToTop);
+		});
+
+		function scrollToTop() {
+			verticalOffset = typeof(verticalOffset) != 'undefined' ? verticalOffset : 0;
+			element = $('body');
+			offset = element.offset();
+			offsetTop = offset.top;
+			$('html, body').animate({scrollTop: offsetTop}, 600, 'linear');
+		}
+	</script>
+
+
+</body>
+</html>
