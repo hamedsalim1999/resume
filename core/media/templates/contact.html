@@ -1,0 +1,83 @@
+{% extends 'shared/_nav.html' %}
+{% block body %}
+{% load static %}
+
+<section id="contact">
+    <div class="overlay">
+        <div class="contact-area">
+            <div class="container">
+                <div class="section-head text-center">
+                    <div class="section-head-icon">
+                        <i class="pe pe-7s-mail-open-file"></i>
+                    </div><!-- /.end of section-head-icon -->
+                    <div class="section-head-text">
+                        <h2>Contact</h2>
+                        <h3>Get In Touch With Me</h3>
+                    </div><!-- /.end of section-head-text -->
+                </div><!-- /.end of section-head -->
+
+                <div class="contact-content">
+                    <div class="address text-center">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-3 col-sm-3">
+                                <div class="address-content">
+                                    <i class="pe pe-7s-map-marker"></i>
+                                    <h4>Address</h4>
+                                    <p class="text-center">4651 Brickyard Street, Manchester, NH 03102</p>
+                                </div><!-- /.end of address-content -->
+                            </div><!-- /.end of col-md-3 -->
+                            <div class="col-lg-3 col-md-3 col-sm-3">
+                                <div class="address-content">
+                                    <i class="pe pe-7s-call"></i>
+                                    <h4>Phone</h4>
+                                    <p class="text-center">+123 987654</p>
+                                </div><!-- /.end of address-content -->
+                            </div><!-- /.end of col-md-3 -->
+                            <div class="col-lg-3 col-md-3 col-sm-3">
+                                <div class="address-content">
+                                    <i class="pe pe-7s-mail-open"></i>
+                                    <h4>Email</h4>
+                                    <p class="text-center">baronadler@mail.com</p>
+                                </div><!-- /.end of address-content -->
+                            </div><!-- /.end of col-md-3 -->
+                            <div class="col-lg-3 col-md-3 col-sm-3">
+                                <div class="address-content">
+                                    <i class="pe pe-7s-global"></i>
+                                    <h4>Website</h4>
+                                    <p class="text-center">www.websitename.com</p>
+                                </div><!-- /.end of address-content -->
+                            </div><!-- /.end of col-md-3 -->
+                        </div><!-- /.end of row -->
+                    </div><!-- /.end of address -->
+
+                    <div class="contact-us">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <div class="contact-form">
+                                    <div class="form-group">
+                                    <form method="post">{% csrf_token %}
+                                        {{ form.as_p }}
+                                    
+                                    <div class="custom-btn">
+												<button type="submit" class="btn">Send Now</button>
+											</div><!-- /.end of custom-btn -->
+                                    </form>
+                                    </div>
+                                </div><!-- /.end of contact-form -->
+                            </div><!-- /.end of col-md-6 -->
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <div class="map-area">
+                                    <div id="google-map">
+                                        <div id="map"></div><!-- /#end of map -->
+                                    </div><!-- /#end of google-map -->
+                                </div><!-- /.end of map-area -->
+                            </div><!-- /.end of col-md-6 -->
+                        </div><!-- /.end of row -->
+                    </div><!-- /.end of contact-us -->
+                </div><!-- /.end of contact-content -->
+            </div><!-- /.end of container -->
+        </div><!-- /.end of contact-area -->
+    </div><!-- /.end of overlay -->
+</section><!-- /#end of contact section -->
+
+{% endblock %}

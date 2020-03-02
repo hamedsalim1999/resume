@@ -11,7 +11,7 @@ class HamedTemplateView(TemplateView):
 
 class HomeTemplateView(ListView):
     template_name = 'post.html'
-    page_name = 'Home'
+    page_name = 'home'
     model = Article
     context_object_name = 'post_show'
 class ArticleTemplateView(DetailView):
@@ -21,9 +21,9 @@ class ArticleTemplateView(DetailView):
     model = Article
     context_object_name = 'article_detail'
 
-class FormsTemplateView(TemplateView):
-    template_name = 'form.html'
-
+class ContactTemplateView(TemplateView):
+    template_name = 'contact.html'
+    page_name = 'contact'
     def get(self,request):
 
         form = SendForm()

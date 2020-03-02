@@ -2,9 +2,36 @@ from django import forms
 from .models import Article
 
 class SendForm(forms.Form):
-    tittle = forms.CharField(max_length=128)
-    slug = forms.SlugField()
-    message = forms.CharField(widget=forms.Textarea)
-    # category = forms.ModelChoiceField(queryset=Article.category_list.objects)
-    aurhor = forms.CharField(max_length=128)
-    email = forms.EmailField()
+    tittle = forms.CharField(max_length=128,label=False ,widget=forms.TextInput(
+        
+        attrs={
+         "autocomplete":"off",
+         "class":"form-control" ,
+         "placeholder":"Tittle",
+    }))
+    
+   
+    aurhor = forms.CharField(max_length=128,label=False , widget=forms.TextInput(
+        
+        attrs={
+         "autocomplete":"off",
+         "class":"form-control" ,
+         "placeholder":"Aurhor",
+    }))
+    message = forms.CharField(label=False,widget=forms.Textarea(
+        
+        attrs={
+         "autocomplete":"off",
+         "class":"form-control" ,
+         "placeholder":"Message",
+    }))
+    email = forms.CharField(max_length=128,label=False , widget=forms.TextInput(
+        
+        attrs={
+         
+         "autocomplete":"off",
+         "class":"form-control" ,
+         "placeholder":"Email",
+         "type":"email",
+
+    }))

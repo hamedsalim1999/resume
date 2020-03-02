@@ -1,7 +1,7 @@
 
 # resume
-[ ] add form
-[ ] add form ui
+[x] add form
+[x] add form ui
 [ ] write api
 [ ] change admin panel
 [ ] unit test
