@@ -1,6 +1,6 @@
 from django.shortcuts import render
-
-from django.shortcuts import render
+from django.contrib import messages
+from django.shortcuts import render , redirect
 from django.views.generic import TemplateView,ListView,DetailView
 from django.http import HttpResponse
 from .models import Article
@@ -25,7 +25,7 @@ class ContactTemplateView(TemplateView):
     template_name = 'contact.html'
     page_name = 'contact'
     def get(self,request):
-
+        
         form = SendForm()
         context = {
             'form':form
@@ -34,5 +34,10 @@ class ContactTemplateView(TemplateView):
 
         
     def post(self,request):
-        return HttpResponse('done')
-        
+        form = SendForm(request.POST)
+        if form.is_valid():
+            messages.add_message(request, messages.SUCCESS , "thanks for submitting a message ")
+            return redirect('contact')
+        messages.add_message(request,messages.ERROR , 'we cand submitting a massage sorry :(')
+        return redirect('contact')
+    

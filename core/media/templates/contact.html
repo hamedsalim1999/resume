@@ -2,6 +2,18 @@
 {% block body %}
 {% load static %}
 
+{% if messages  %}
+{% for  message in messages %}
+<div class="modal-body">
+<h1>
+     {{ message }}
+       
+    </h1>
+    {% endfor %}
+</div>
+
+{% endif %}
+
 <section id="contact">
     <div class="overlay">
         <div class="contact-area">

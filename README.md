@@ -2,6 +2,7 @@
 # resume
 [x] add form
 [x] add form ui
+[x] show form error
 [ ] write api
 [ ] change admin panel
 [ ] unit test
