@@ -1,5 +1,6 @@
 
 # resume
+[x] compileted git 
 [x] add form
 [x] add form ui
 [x] show form error
