@@ -36,6 +36,7 @@ class ContactTemplateView(TemplateView):
     def post(self,request):
         form = SendForm(request.POST)
         if form.is_valid():
+            form.save()
             messages.add_message(request, messages.SUCCESS , "thanks for submitting a message ")
             return redirect('contact')
         messages.add_message(request,messages.ERROR , 'we cand submitting a massage sorry :(')

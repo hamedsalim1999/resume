@@ -1,7 +1,9 @@
 from django.contrib import admin
 from .models import Article
 from .models import Category
-# Register your models here.
+from .models import Form
+
+
 @admin.register(Article)
 class ArticlePost(admin.ModelAdmin):
     date_hierarchy = 'published_at'
@@ -26,11 +28,20 @@ class ArticlePost(admin.ModelAdmin):
             
         }),
     )
+
+
+
 @admin.register(Category)
 class Category(admin.ModelAdmin):
-   
     actions_on_bottom = True
     actions_selection_counter = True
-    
+
+
+
+@admin.register(Form)
+class Form_view(admin.ModelAdmin):
+    actions_on_bottom = True
+    actions_selection_counter = True
+    date_hierarchy = 'published_at'
     
     

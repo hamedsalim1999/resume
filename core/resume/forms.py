@@ -1,37 +1,52 @@
-from django import forms
-from .models import Article
+from django.forms import ModelForm,Textarea,TextInput,EmailInput
+from .models import Form
 
-class SendForm(forms.Form):
-    tittle = forms.CharField(max_length=128,label=False ,widget=forms.TextInput(
-        
-        attrs={
-         "autocomplete":"off",
-         "class":"form-control" ,
-         "placeholder":"Tittle",
-    }))
-    
-   
-    aurhor = forms.CharField(max_length=128,label=False , widget=forms.TextInput(
-        
-        attrs={
-         "autocomplete":"off",
-         "class":"form-control" ,
-         "placeholder":"Aurhor",
-    }))
-    message = forms.CharField(label=False,widget=forms.Textarea(
-        
-        attrs={
-         "autocomplete":"off",
-         "class":"form-control" ,
-         "placeholder":"Message",
-    }))
-    email = forms.CharField(max_length=128,label=False , widget=forms.TextInput(
-        
-        attrs={
-         
-         "autocomplete":"off",
-         "class":"form-control" ,
-         "placeholder":"Email",
-         "type":"email",
 
-    }))
+class SendForm(ModelForm):
+    class Meta:
+        model = Form
+        fields  = ( 'tittle' , 'message','auther','email')
+        
+
+
+
+
+        labels = {
+        "tittle": False,
+        "message": False,
+        "auther": False,
+        "email": False,
+    }
+        widgets = {
+            'message': Textarea(
+                attrs={ 
+        "autocomplete":"off",
+        "class":"form-control" ,
+        "placeholder":"Message"},
+
+        
+        ),
+        'tittle': TextInput( 
+            attrs={ 
+        "autocomplete":"off",
+        "class":"form-control" ,
+        "placeholder":"tittle"},
+        
+        ),
+        'auther': TextInput( 
+            attrs={ 
+        "autocomplete":"off",
+        "class":"form-control" ,
+        "placeholder":"auther"},
+        
+        ),
+        'email': EmailInput( 
+            attrs={ 
+        "autocomplete":"off",
+        "class":"form-control" ,
+        "placeholder":"email"},
+        
+        ),
+        
+        }
+       
