@@ -6,6 +6,7 @@ class Form (models.Model):
     auther = models.CharField(max_length=128)
     published_at = models.DateTimeField(default = timezone.now)
     email = models.EmailField()
+    ISread = models.BooleanField(default= False)
     class Meta:
         ordering = ['-published_at']
         verbose_name = 'Form'

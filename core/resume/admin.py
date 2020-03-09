@@ -40,8 +40,24 @@ class Category(admin.ModelAdmin):
 
 @admin.register(Form)
 class Form_view(admin.ModelAdmin):
+    list_display = ('tittle','ISread',)
     actions_on_bottom = True
     actions_selection_counter = True
     date_hierarchy = 'published_at'
-    
-    
+    readonly_fields = [ 'tittle','message','auther','published_at','email']
+    fieldsets = (
+       ( None , {
+            'fields':(
+                
+            ('tittle',),
+            ('message', ),
+            ('auther',),
+            ('email',),
+            ('published_at',),
+            ('ISread',),
+           
+            )
+            }
+            ),
+    )
+
