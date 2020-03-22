@@ -35,6 +35,8 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'rest_framework',
+    'snippets.apps.SnippetsConfig',
     'django.contrib.staticfiles',
 ]
 INSTALLED_APPS.append('resume.apps.ResumeConfig')

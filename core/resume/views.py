@@ -1,10 +1,12 @@
 from django.shortcuts import render
 from django.contrib import messages
+from rest_framework import generics
 from django.shortcuts import render , redirect
 from django.views.generic import TemplateView,ListView,DetailView
 from django.http import HttpResponse
 from .models import Article
 from .forms import SendForm
+from .serializers import ArticleSerializer
 class HamedTemplateView(TemplateView):
     template_name = 'index.html'
     page_name = 'Hamed'
@@ -41,4 +43,11 @@ class ContactTemplateView(TemplateView):
             return redirect('contact')
         messages.add_message(request,messages.ERROR , 'we cand submitting a massage sorry :(')
         return redirect('contact')
+class ArticleView(generics.ListAPIView):
+    """
+    Provides a get method handler.
+    """
+    queryset = Article.objects.all()
+    serializer_class = ArticleSerializer
+    
     
