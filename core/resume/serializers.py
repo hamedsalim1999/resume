@@ -8,4 +8,4 @@ class ArticleSerializer(serializers.ModelSerializer):
 class FormSerializer(serializers.ModelSerializer):
     class Meta:
         model = Form
-        fields = '__all__'
+        fields =  [ 'tittle','message','auther','email']

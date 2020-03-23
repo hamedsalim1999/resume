@@ -5,7 +5,7 @@
 [x] add form ui
 [x] show form error
 [x] done admin show form 
-[ ] write api
+[x] write api
 [ ] change admin panel
 [ ] unit test
 [ ] fix template
