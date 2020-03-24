@@ -8,9 +8,7 @@ class ArticleModel(TestCase):
             tittle = 'python',
             slug = 'python-user',
                 )
-        
-
-        
+               
     def test_Form(self):
         form = Form(
             tittle = 'Q&A',

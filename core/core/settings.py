@@ -41,6 +41,8 @@ INSTALLED_APPS = [
 ]
 INSTALLED_APPS.append('resume.apps.ResumeConfig')
 INSTALLED_APPS.append('article.apps.ArticleConfig')
+INSTALLED_APPS.append('account.apps.AccountConfig')
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
