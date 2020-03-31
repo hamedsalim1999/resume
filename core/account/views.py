@@ -1,19 +1,18 @@
-from django.shortcuts import render,redirect
-from django.contrib.auth import login , authenticate
-from django.contrib.forms import UserCrationForm
-from django.views.generic import CreateView
+from django.contrib.auth import login, authenticate
+from django.shortcuts import render, redirect
 
+from .forms import SignUpForm
 
-class Singup(CreateView):
-    model = User
-    from_class = UserCrationForm
-
-    def form_calid(self,form):
-        from.save()
-        username = form.cleaned_data.get('username')
-        password = form.cleaned_data.get('passwords')
-        user = authenticate(username = username , password = password)
-
-        login(self.request , user)
-        return redirect('home')
-
+def signup(request):
+    if request.method == 'POST':
+        form = SignUpForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data.get('username')
+            raw_password = form.cleaned_data.get('password1')
+            user = authenticate(username=username, password=raw_password)
+            login(request, user)
+            return redirect('index')
+    else:
+        form = SignUpForm()
+    return render(request, 'signup.html', {'form': form})

@@ -16,10 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include, re_path
 from django.conf import settings
+from . import views
 from django.conf.urls.static import static
 urlpatterns = [
 
-    
+    re_path(r'^singup$',views.signup, name='signup'),
 
 ]
 
